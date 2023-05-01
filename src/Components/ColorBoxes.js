@@ -11,22 +11,23 @@ class ColorBoxes extends Component {
   handleClick = () => {
     setTimeout(() => {
       this.setState({ clicked: false });
-    }, 1600);
+    }, 2000);
     this.setState({ clicked: true });
   };
   render() {
     return (
-      <CopyToClipboard text={this.props.color} onCopy={this.handleClick}>
-        <div style={{ backgroundColor: this.props.color }} className="colorBox">
-          <div
-            style={{ backgroundColor: this.props.color }}
-            className={`${this.state.clicked ? "show" : "fill"}`}
-          />
-          <div className="box-contents">
-            <button className="copy-btn">Copy</button>
-            <span className="name">{this.props.name}</span>
-            <button className="see-more">More</button>
-          </div>
+      <CopyToClipboard text={this.props.hex} onCopy={this.handleClick}>
+        <div
+          style={{ backgroundColor: this.props.hex }}
+          id="box"
+          className={`show ${this.state.clicked ? "center" : ""}`}
+        >
+          <div style={{ backgroundColor: this.props.hex }} />
+          <button className={`copy-btn`}>
+            {this.state.clicked ? "copied" : "copy"}
+          </button>
+          <span className={`name`}>{this.props.name}</span>
+          <button className={`see-more`}>More</button>
         </div>
       </CopyToClipboard>
     );
