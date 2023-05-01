@@ -16,7 +16,10 @@ class ColorBoxes extends Component {
   };
   render() {
     return (
-      <CopyToClipboard text={this.props.hex} onCopy={this.handleClick}>
+      <CopyToClipboard
+        text={this.props[`${this.props.copyValue}`]}
+        onCopy={this.handleClick}
+      >
         <div
           style={{ backgroundColor: this.props.hex }}
           id="box"

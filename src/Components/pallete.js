@@ -8,6 +8,7 @@ class pallete extends Component {
     super();
     this.state = {
       contrast: 100,
+      copyValue: "",
     };
   }
   handleRange = () => {
@@ -15,17 +16,33 @@ class pallete extends Component {
       contrast: document.getElementById("colorRange").value,
     });
   };
+  handleDropdown = () => {
+    return this.setState({
+      copyValue: document.getElementById("colorChoose").value,
+    });
+  };
+
   colorPallete = () => {
     const colors = Colors();
     return colors[this.state.contrast].map((k) => {
-      console.log(k);
-      return <ColorBoxes name={k.name} hex={k.hex} rgb={k.rgb} rgba={k.rgba} />;
+      return (
+        <ColorBoxes
+          name={k.name}
+          hex={k.hex}
+          rgb={k.rgb}
+          rgba={k.rgba}
+          copyValue={this.state.copyValue}
+        />
+      );
     });
   };
   render() {
     return (
       <div>
-        <Navbar handleRange={this.handleRange} />
+        <Navbar
+          handleRange={this.handleRange}
+          handleDropdown={this.handleDropdown}
+        />
         <div className="pallete">{this.colorPallete()}</div>
       </div>
     );

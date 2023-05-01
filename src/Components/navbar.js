@@ -15,10 +15,10 @@ class Navbar extends Component {
             min="100"
           />
         </div>
-        <select id="colorChoose">
+        <select onChange={this.props.handleDropdown} id="colorChoose">
           <option value="hex">HEX Color</option>
-          <option value="RGB">RGB</option>
-          <option value="RGBa">RGBa</option>
+          <option value="rgb">RGB</option>
+          <option value="rgba">RGBa</option>
         </select>
       </div>
     );
