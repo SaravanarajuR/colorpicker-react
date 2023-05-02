@@ -17,6 +17,12 @@ class pallete extends Component {
     });
   };
   handleDropdown = () => {
+    document.getElementById("alert").style.visibility = "visible";
+    document.getElementById("colorChoose").disabled = true;
+    setTimeout(() => {
+      document.getElementById("alert").style.visibility = "hidden";
+      document.getElementById("colorChoose").disabled = false;
+    }, 1000);
     return this.setState({
       copyValue: document.getElementById("colorChoose").value,
     });
@@ -38,12 +44,14 @@ class pallete extends Component {
   };
   render() {
     return (
-      <div>
+      <div id="palleteParent">
+        <div id="alert">Format changed to {this.state.copyValue}</div>
         <Navbar
           handleRange={this.handleRange}
           handleDropdown={this.handleDropdown}
         />
         <div className="pallete">{this.colorPallete()}</div>
+        <footer className="palleteFooter" />
       </div>
     );
   }

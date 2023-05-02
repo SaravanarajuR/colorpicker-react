@@ -47,7 +47,10 @@ function allPallete() {
         name: pallette.colors[i].name,
         hex: created[i][j],
         rgb: chroma(created[i][j]).css(),
-        rgba: chroma(created[i][j]).css().replace(")", ",0.1)"),
+        rgba: chroma(created[i][j])
+          .css()
+          .replace(")", ",0.1)")
+          .replace("rgb", "rgba"),
       });
     }
   }
