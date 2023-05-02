@@ -1,10 +1,10 @@
 import React from "react";
-import Pallete from "./Components/pallete.js";
+import Path from "./Components/routes.js";
 
 function App() {
   return (
     <div className="App">
-      <Pallete />
+      <Path />
     </div>
   );
 }

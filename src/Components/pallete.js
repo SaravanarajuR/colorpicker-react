@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ColorBoxes from "./ColorBoxes.js";
 import Colors from "./createPallete.js";
 import Navbar from "./navbar.js";
+import { v4 } from "uuid";
 
 class pallete extends Component {
   constructor() {
@@ -29,10 +30,11 @@ class pallete extends Component {
   };
 
   colorPallete = () => {
-    const colors = Colors();
+    const colors = Colors().allcreated;
     return colors[this.state.contrast].map((k) => {
       return (
         <ColorBoxes
+          key={v4()}
           name={k.name}
           hex={k.hex}
           rgb={k.rgb}
@@ -51,7 +53,9 @@ class pallete extends Component {
           handleDropdown={this.handleDropdown}
         />
         <div className="pallete">{this.colorPallete()}</div>
-        <footer className="palleteFooter" />
+        <footer className="palleteFooter">
+          <p className="footerFont">{Colors().id}</p>
+        </footer>
       </div>
     );
   }

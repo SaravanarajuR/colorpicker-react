@@ -1,32 +1,14 @@
 import chroma from "chroma-js";
+import allColors from "./seedColors.js";
 
-let pallette = {
-  paletteName: "Flat UI Colors Spanish",
-  id: "flat-ui-colors-spanish",
-  emoji: "🇪🇸",
-  colors: [
-    { name: "JacksonsPurple", color: "#40407a" },
-    { name: "C64Purple", color: "#706fd3" },
-    { name: "SwanWhite", color: "#f7f1e3" },
-    { name: "SummerSky", color: "#34ace0" },
-    { name: "CelestialGreen", color: "#33d9b2" },
-    { name: "LuckyPoint", color: "#2c2c54" },
-    { name: "Liberty", color: "#474787" },
-    { name: "HotStone", color: "#aaa69d" },
-    { name: "DevilBlue", color: "#227093" },
-    { name: "PalmSpringsSplash", color: "#218c74" },
-    { name: "FlourescentRed", color: "#ff5252" },
-    { name: "SyntheticPumpkin", color: "#ff793f" },
-    { name: "CrocodileTooth", color: "#d1ccc0" },
-    { name: "MandarinSorbet", color: "#ffb142" },
-    { name: "SpicedButterNut", color: "#ffda79" },
-    { name: "EyeOfNewt", color: "#b33939" },
-    { name: "ChileanFire", color: "#cd6133" },
-    { name: "GreyPorcelain", color: "#84817a" },
-    { name: "AlamedaOchre", color: "#cc8e35" },
-    { name: "Desert", color: "#ccae62" },
-  ],
-};
+let pallette = allColors.filter((k) => {
+  console.log(window.location.pathname);
+  if (k.id === window.location.pathname.split("/")[2]) {
+    return 1;
+  } else {
+    return 0;
+  }
+})[0];
 
 function getRange(color) {
   return [chroma(color).darken(1.4), color, "#fff"];
@@ -54,7 +36,7 @@ function allPallete() {
       });
     }
   }
-  return allcreated;
+  return { id: pallette.paletteName, allcreated: allcreated };
 }
 
 function createPallete(color) {
