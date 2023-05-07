@@ -1,19 +1,19 @@
 import { Component } from "react";
-import colors from "./seedColors.js";
-import { NavLink } from "react-router-dom";
+import Colors from "./seedColors.js";
+import NavIcon from "./palleteIcons.js";
 
 class Home extends Component {
   handleRender = () => {
-    return colors.map((k) => {
-      return <NavLink to={`pallete/${k.id}`}>{k.paletteName}</NavLink>;
+    return Colors.map((k) => {
+      return (
+        <a href={`pallete/${k.id}`}>
+          <NavIcon id={k.id} />
+        </a>
+      );
     });
   };
   render() {
-    return (
-      <div>
-        <div>{this.handleRender()}</div>
-      </div>
-    );
+    return <div className="home">{this.handleRender()}</div>;
   }
 }
 

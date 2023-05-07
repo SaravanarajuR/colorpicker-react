@@ -25,12 +25,17 @@ class ColorBoxes extends Component {
           id="box"
           className={`show ${this.state.clicked ? "center" : ""}`}
         >
-          <div style={{ backgroundColor: this.props.hex }} />
-          <button className={`copy-btn`}>
-            {this.state.clicked ? "copied" : "copy"}
-          </button>
-          <span className={`name`}>{this.props.name}</span>
-          <button className={`see-more`}>More</button>
+          {this.props.mini ? (
+            ""
+          ) : (
+            <div>
+              <button className={`copy-btn`}>
+                {this.state.clicked ? "copied" : "copy"}
+              </button>
+              <span className={`name`}>{this.props.name}</span>
+              <button className={`see-more`}>More</button>
+            </div>
+          )}
         </div>
       </CopyToClipboard>
     );

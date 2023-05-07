@@ -1,19 +1,17 @@
 import chroma from "chroma-js";
 import allColors from "./seedColors.js";
 
-let pallette = allColors.filter((k) => {
-  console.log(window.location.pathname);
-  if (k.id === window.location.pathname.split("/")[2]) {
-    return 1;
-  } else {
-    return 0;
-  }
-})[0];
-
 function getRange(color) {
   return [chroma(color).darken(1.4), color, "#fff"];
 }
-function allPallete() {
+function allPallete(id) {
+  let pallette = allColors.filter((k) => {
+    if (k.id === id) {
+      return 1;
+    } else {
+      return 0;
+    }
+  })[0];
   const allcreated = {};
   const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
   const created = pallette.colors.map((k) => {
@@ -26,7 +24,7 @@ function allPallete() {
   for (let j = 0; j < levels.length; j++) {
     for (let i = 0; i < created.length; i++) {
       allcreated[levels[j]].push({
-        name: pallette.colors[i].name,
+        name: pallette["colors"][i].name,
         hex: created[i][j],
         rgb: chroma(created[i][j]).css(),
         rgba: chroma(created[i][j])

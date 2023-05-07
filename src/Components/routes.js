@@ -8,8 +8,12 @@ class Paths extends Component {
     return (
       <div>
         <Routes>
-          <Route path="/pallete/:id" element={<Pallete />} />
-          <Route path="/" element={<Home />} />
+          <Route
+            exact
+            path="/pallete/:id"
+            element={<Pallete id={window.location.pathname.split("/")[2]} />}
+          />
+          <Route exact path="/" element={<Home />} />
         </Routes>
       </div>
     );

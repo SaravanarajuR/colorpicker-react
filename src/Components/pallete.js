@@ -4,9 +4,9 @@ import Colors from "./createPallete.js";
 import Navbar from "./navbar.js";
 import { v4 } from "uuid";
 
-class pallete extends Component {
-  constructor() {
-    super();
+class Pallete extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       contrast: 100,
       copyValue: "",
@@ -30,7 +30,7 @@ class pallete extends Component {
   };
 
   colorPallete = () => {
-    const colors = Colors().allcreated;
+    const colors = Colors(this.props.id).allcreated;
     return colors[this.state.contrast].map((k) => {
       return (
         <ColorBoxes
@@ -54,11 +54,11 @@ class pallete extends Component {
         />
         <div className="pallete">{this.colorPallete()}</div>
         <footer className="palleteFooter">
-          <p className="footerFont">{Colors().id}</p>
+          <p className="footerFont">{Colors(this.props.id).id}</p>
         </footer>
       </div>
     );
   }
 }
 
-export default pallete;
+export default Pallete;
