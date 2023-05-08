@@ -1,6 +1,8 @@
 import { Component } from "react";
 import Colors from "./seedColors.js";
 import NavIcon from "./palleteIcons.js";
+import Navbar from "./navbar.js";
+import Footer from "./footer.js";
 
 class Home extends Component {
   handleRender = () => {
@@ -13,7 +15,13 @@ class Home extends Component {
     });
   };
   render() {
-    return <div className="home">{this.handleRender()}</div>;
+    return (
+      <div className="home-parent">
+        <Navbar mini={true} />
+        <div className="home">{this.handleRender()}</div>
+        <Footer />
+      </div>
+    );
   }
 }
 
