@@ -3,6 +3,28 @@ import ColorBoxes from "./ColorBoxes.js";
 import Colors from "./createPallete.js";
 import { v4 } from "uuid";
 import ColorArrays from "./seedColors.js";
+import { withStyles } from "@material-ui/styles";
+
+const styles = {
+  main: {
+    height: "130px",
+    width: "180px",
+    backgroundColor: " white",
+    margin: "20px",
+    padding: "10px",
+    display: "inline-block",
+    borderRadius: " 0 0 10px 10px",
+    color: "black",
+  },
+  topic: {
+    color: "black",
+  },
+  inner: {
+    width: "99%",
+    height: "70%",
+    overflow: "hidden",
+  },
+};
 
 class Pallete extends Component {
   constructor(props) {
@@ -40,16 +62,17 @@ class Pallete extends Component {
     });
   };
   render() {
+    const { classes } = this.props;
     return (
-      <div className="miniPallete">
-        <div className="miniPalleteInner">{this.colorPallete()}</div>
+      <div className={classes.main}>
+        <div className={classes.inner}>{this.colorPallete()}</div>
         <div className="nameEmoji">
-          <p>{this.state.name}</p>
-          <p>{this.state.emoji}</p>
+          <p className={classes.topic}>{this.state.name}</p>
+          <p className={classes.topic}>{this.state.emoji}</p>
         </div>
       </div>
     );
   }
 }
 
-export default Pallete;
+export default withStyles(styles)(Pallete);
