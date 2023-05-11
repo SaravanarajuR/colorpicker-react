@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
@@ -23,6 +24,7 @@ class Navbar extends Component {
               onChange={this.props.handleRange}
               type="range"
               id="colorRange"
+              defaultValue={500}
               max="900"
               step="100"
               min="100"
@@ -30,7 +32,9 @@ class Navbar extends Component {
           )}
         </div>
         {this.props.mini ? (
-          ""
+          <Link className="Link" to="/createPallete">
+            Create pallete
+          </Link>
         ) : (
           <select onChange={this.props.handleDropdown} id="colorChoose">
             <option value="hex">HEX Color</option>

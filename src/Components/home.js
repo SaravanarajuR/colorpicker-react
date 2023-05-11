@@ -8,7 +8,7 @@ class Home extends Component {
   handleRender = () => {
     return Colors.map((k) => {
       return (
-        <a href={`pallete/${k.id}`}>
+        <a className="Link" href={`pallete/${k.id}`}>
           <NavIcon id={k.id} />
         </a>
       );
@@ -18,7 +18,9 @@ class Home extends Component {
     return (
       <div className="home-parent">
         <Navbar mini={true} />
-        <div className="home">{this.handleRender()}</div>
+        <div className="home-outer">
+          <div className="home">{this.handleRender()}</div>
+        </div>
         <Footer />
       </div>
     );

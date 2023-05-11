@@ -8,7 +8,7 @@ class Pallete extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      contrast: 100,
+      contrast: 500,
       copyValue: "",
     };
   }
@@ -53,7 +53,7 @@ class Pallete extends Component {
           handleDropdown={this.handleDropdown}
         />
         <div className="pallete">{this.colorPallete()}</div>
-        <footer className="palleteFooter">
+        <footer className="footer">
           <p className="footerFont">{Colors(this.props.id).id}</p>
         </footer>
       </div>

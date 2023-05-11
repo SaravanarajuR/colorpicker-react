@@ -24,6 +24,12 @@ body {
   margin: 0 10px;
 }
 
+.Link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #fff;
+}
+
 #colorChoose {
   border-radius: 6px;
   border: 1px solid black;
@@ -57,6 +63,7 @@ body {
   margin: -5px 0;
   padding: 0;
   position: relative;
+  background-color: black;
 }
 
 .home-parent {
@@ -66,35 +73,30 @@ body {
 }
 
 .home {
-  width: 100%;
-  height: 87%;
+  width: 80%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 27%);
+  gap: 5%;
+}
+
+.home-outer {
   overflow: auto;
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+  display: flex;
+  height: 87%;
 }
 
 .footer {
   background-color: white;
   height: 3%;
-}
-
-.miniPallete {
-  height: 18%;
-  width: 25%;
-  background-color: black;
-  margin: 20px;
-  padding: 10px;
-  display: inline-block;
-  border-radius: 30px 30px 10px 10px;
-}
-
-.miniPalleteInner {
-  width: 96%;
-  height: 70%;
-  overflow: hidden;
-  border: 3px solid black;
-  border-radius: 30px;
+  width: 100%;
+  color: black;
+  font-weight: 900;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 /* Color Boxes */
 
@@ -171,16 +173,6 @@ p {
 
 /*footer*/
 
-.palleteFooter {
-  height: 6.3%;
-  background-color: black;
-  width: 100%;
-  color: aliceblue;
-  font-weight: 900;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
 .footerFont {
   margin: 0 1rem;
 }

@@ -7,12 +7,11 @@ import { withStyles } from "@material-ui/styles";
 
 const styles = {
   main: {
-    height: "130px",
-    width: "180px",
+    height: "180px",
+    width: "100%",
     backgroundColor: " white",
     margin: "20px",
     padding: "10px",
-    display: "inline-block",
     borderRadius: " 0 0 10px 10px",
     color: "black",
   },
