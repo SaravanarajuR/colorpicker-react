@@ -1,8 +1,8 @@
 import { Component } from "react";
-import Colors from "./seedColors.js";
-import NavIcon from "./palleteIcons.js";
-import Navbar from "./navbar.js";
-import Footer from "./footer.js";
+import Colors from "../Components/seedColors";
+import NavIcon from "../Components/palleteIcons";
+import Navbar from "../Components/navbar.js";
+import Footer from "../Components/footer.js";
 
 class Home extends Component {
   handleRender = () => {

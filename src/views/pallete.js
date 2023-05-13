@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ColorBoxes from "./ColorBoxes.js";
-import Colors from "./createPallete.js";
-import Navbar from "./navbar.js";
+import ColorBoxes from "../Components/ColorBoxes.js";
+import Colors from "../Components/createPallete.js";
+import Navbar from "../Components/navbar.js";
 import { v4 } from "uuid";
 
 class Pallete extends Component {

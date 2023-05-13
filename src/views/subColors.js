@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ColorBoxes from "./ColorBoxes";
-import Colors from "./createPallete";
+import ColorBoxes from "../Components/ColorBoxes";
+import Colors from "../Components/createPallete";
 import { createStyles, withStyles } from "@material-ui/styles";
-import Navbar from "./navbar";
-import Footer from "./footer";
+import Navbar from "../Components/navbar";
+import Footer from "../Components/footer";
 
 const styles = createStyles({
   main: {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Route, Routes } from "react-router-dom";
-import Pallete from "./pallete.js";
-import Home from "./home.js";
-import New from "./createOwnPallete.js";
-import SubColors from "./subColors.js";
+import Pallete from "./views/pallete";
+import Home from "./views/home.js";
+import New from "./Components/createOwnPallete.js";
+import SubColors from "./views/subColors.js";
 
 class Paths extends Component {
   render() {
