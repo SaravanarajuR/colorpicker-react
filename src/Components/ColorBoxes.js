@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
+import { Link } from "react-router-dom";
 
 class ColorBoxes extends Component {
   constructor() {
@@ -8,6 +9,7 @@ class ColorBoxes extends Component {
       clicked: false,
     };
   }
+
   handleClick = () => {
     setTimeout(() => {
       this.setState({ clicked: false });
@@ -15,6 +17,7 @@ class ColorBoxes extends Component {
     this.setState({ clicked: true });
   };
   render() {
+    console.log(this.props);
     return (
       <CopyToClipboard
         text={this.props[`${this.props.copyValue}`]}
@@ -22,7 +25,7 @@ class ColorBoxes extends Component {
       >
         <div
           style={{ backgroundColor: this.props.hex }}
-          id="box"
+          id={this.props.className}
           className={`show ${this.state.clicked ? "center" : ""}`}
         >
           {this.props.mini ? (
@@ -33,7 +36,20 @@ class ColorBoxes extends Component {
                 {this.state.clicked ? "copied" : "copy"}
               </button>
               <span className={`name`}>{this.props.name}</span>
-              <button className={`see-more`}>More</button>
+              {this.props.single ? (
+                ""
+              ) : (
+                <Link to={`/seemore/${this.props.id}/${this.props.name}`}>
+                  <button
+                    className={`see-more`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                  >
+                    More
+                  </button>
+                </Link>
+              )}
             </div>
           )}
         </div>

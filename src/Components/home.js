@@ -21,7 +21,7 @@ class Home extends Component {
         <div className="home-outer">
           <div className="home">{this.handleRender()}</div>
         </div>
-        <Footer />
+        <Footer color={"white"} />
       </div>
     );
   }

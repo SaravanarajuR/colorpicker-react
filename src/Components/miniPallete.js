@@ -6,7 +6,7 @@ import ColorArrays from "./seedColors.js";
 import { withStyles } from "@material-ui/styles";
 
 const styles = {
-  main: {
+  top: {
     height: "180px",
     width: "100%",
     backgroundColor: " white",
@@ -30,7 +30,6 @@ class Pallete extends Component {
     super(props);
     this.state = {
       contrast: 600,
-      copyValue: "",
       name: "",
       emoji: "",
     };
@@ -51,19 +50,14 @@ class Pallete extends Component {
     const colors = Colors(this.props.id).allcreated;
     return colors[this.state.contrast].map((k) => {
       return (
-        <ColorBoxes
-          key={v4()}
-          hex={k.hex}
-          copyValue={this.state.copyValue}
-          mini={true}
-        />
+        <ColorBoxes key={v4()} hex={k.hex} mini={true} className={"box"} />
       );
     });
   };
   render() {
     const { classes } = this.props;
     return (
-      <div className={classes.main}>
+      <div className={classes.top}>
         <div className={classes.inner}>{this.colorPallete()}</div>
         <div className="nameEmoji">
           <p className={classes.topic}>{this.state.name}</p>

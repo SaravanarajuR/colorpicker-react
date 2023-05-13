@@ -9,7 +9,7 @@ class Pallete extends Component {
     super(props);
     this.state = {
       contrast: 500,
-      copyValue: "",
+      copyValue: "hex",
     };
   }
   handleRange = () => {
@@ -34,11 +34,14 @@ class Pallete extends Component {
     return colors[this.state.contrast].map((k) => {
       return (
         <ColorBoxes
+          allColors={colors}
           key={v4()}
           name={k.name}
+          id={k.id}
           hex={k.hex}
           rgb={k.rgb}
           rgba={k.rgba}
+          className="box"
           copyValue={this.state.copyValue}
         />
       );

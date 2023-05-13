@@ -17,7 +17,7 @@ class Navbar extends Component {
       >
         <div id="leftNav">
           <h1>ColorPicker</h1>
-          {this.props.mini ? (
+          {this.props.mini || this.props.single ? (
             ""
           ) : (
             <input

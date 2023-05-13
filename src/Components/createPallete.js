@@ -31,6 +31,7 @@ function allPallete(id) {
           .css()
           .replace(")", ",0.1)")
           .replace("rgb", "rgba"),
+        id: id,
       });
     }
   }
