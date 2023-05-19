@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/colorBoxes";
 
 class ColorBoxes extends Component {
   constructor() {
@@ -17,7 +19,7 @@ class ColorBoxes extends Component {
     this.setState({ clicked: true });
   };
   render() {
-    console.log(this.props);
+    const { classes } = this.props;
     return (
       <CopyToClipboard
         text={this.props[`${this.props.copyValue}`]}
@@ -26,13 +28,13 @@ class ColorBoxes extends Component {
         <div
           style={{ backgroundColor: this.props.hex }}
           id={this.props.className}
-          className={`show ${this.state.clicked ? "center" : ""}`}
+          className={`${classes.container} ${classes[this.props.className]}`}
         >
           {this.props.mini ? (
             ""
           ) : (
             <div>
-              <button className={`copy-btn`}>
+              <button className={classes.copyBtn}>
                 {this.state.clicked ? "copied" : "copy"}
               </button>
               <span className={`name`}>{this.props.name}</span>
@@ -40,14 +42,14 @@ class ColorBoxes extends Component {
                 ""
               ) : (
                 <Link to={`/seemore/${this.props.id}/${this.props.name}`}>
-                  <button
-                    className={`see-more`}
+                  <p
+                    className={classes.seemore}
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
                   >
                     More
-                  </button>
+                  </p>
                 </Link>
               )}
             </div>
@@ -58,4 +60,4 @@ class ColorBoxes extends Component {
   }
 }
 
-export default ColorBoxes;
+export default withStyles(styles)(ColorBoxes);

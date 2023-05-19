@@ -3,6 +3,8 @@ import ColorBoxes from "../Components/ColorBoxes.js";
 import Colors from "../Components/createPallete.js";
 import Navbar from "../Components/navbar.js";
 import { v4 } from "uuid";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/pallete.js";
 
 class Pallete extends Component {
   constructor(props) {
@@ -48,20 +50,23 @@ class Pallete extends Component {
     });
   };
   render() {
+    const { classes } = this.props;
     return (
-      <div id="palleteParent">
-        <div id="alert">Format changed to {this.state.copyValue}</div>
+      <div className={classes.palleteParent}>
+        <div id="alert" className={classes.alert}>
+          Format changed to {this.state.copyValue}
+        </div>
         <Navbar
           handleRange={this.handleRange}
           handleDropdown={this.handleDropdown}
         />
-        <div className="pallete">{this.colorPallete()}</div>
-        <footer className="footer">
-          <p className="footerFont">{Colors(this.props.id).id}</p>
+        <div className={classes.pallete}>{this.colorPallete()}</div>
+        <footer className={classes.footer}>
+          <p className={classes.footerFont}>{Colors(this.props.id).id}</p>
         </footer>
       </div>
     );
   }
 }
 
-export default Pallete;
+export default withStyles(styles)(Pallete);

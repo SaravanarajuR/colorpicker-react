@@ -1,21 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { withStyles } from "@material-ui/styles";
+import styles from "../styles/navbar";
 
 class Navbar extends Component {
   render() {
+    const { classes } = this.props;
     return (
-      <div
-        id="navbar"
-        style={
-          this.props.mini
-            ? {
-                backgroundColor: "rgb(130, 130, 228)",
-                borderBottom: "1px solid white",
-              }
-            : {}
-        }
-      >
-        <div id="leftNav">
+      <div id="navbar" className={this.props.mini ? classes.mini : ""}>
+        <div className={classes.leftNav}>
           <h1>ColorPicker</h1>
           {this.props.mini || this.props.single ? (
             ""
@@ -32,11 +25,15 @@ class Navbar extends Component {
           )}
         </div>
         {this.props.mini ? (
-          <Link className="Link" to="/createPallete">
+          <Link className={classes.Link} to="/createPallete">
             Create pallete
           </Link>
         ) : (
-          <select onChange={this.props.handleDropdown} id="colorChoose">
+          <select
+            onChange={this.props.handleDropdown}
+            id="colorChoose"
+            className={classes.colorChoose}
+          >
             <option value="hex">HEX Color</option>
             <option value="rgb">RGB</option>
             <option value="rgba">RGBa</option>
@@ -47,4 +44,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withStyles(styles)(Navbar);

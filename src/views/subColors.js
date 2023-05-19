@@ -1,23 +1,10 @@
 import React, { Component } from "react";
 import ColorBoxes from "../Components/ColorBoxes";
 import Colors from "../Components/createPallete";
-import { createStyles, withStyles } from "@material-ui/styles";
+import { withStyles } from "@material-ui/styles";
 import Navbar from "../Components/navbar";
 import Footer from "../Components/footer";
-
-const styles = createStyles({
-  main: {
-    width: "100vw",
-    height: "100vh",
-  },
-  box: {
-    width: "100%",
-    height: "88%",
-    margin: "-5px 0",
-    padding: "0",
-    position: "relative",
-  },
-});
+import styles from "../styles/subcolors";
 
 class subColors extends Component {
   constructor() {
@@ -71,7 +58,9 @@ class subColors extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.main}>
-        <div id="alert">Format changed to {this.state.copyValue}</div>
+        <div className={classes.alert} id="alert">
+          Format changed to {this.state.copyValue}
+        </div>
         <Navbar single={true} handleDropdown={this.handleDropdown} />
         <div className={classes.box}>{this.handleRender()}</div>
         <Footer color={"black"} />

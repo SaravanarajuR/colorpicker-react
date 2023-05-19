@@ -4,26 +4,7 @@ import Colors from "./createPallete.js";
 import { v4 } from "uuid";
 import ColorArrays from "./seedColors.js";
 import { withStyles } from "@material-ui/styles";
-
-const styles = {
-  top: {
-    height: "180px",
-    width: "100%",
-    backgroundColor: " white",
-    margin: "20px",
-    padding: "10px",
-    borderRadius: " 0 0 10px 10px",
-    color: "black",
-  },
-  topic: {
-    color: "black",
-  },
-  inner: {
-    width: "99%",
-    height: "70%",
-    overflow: "hidden",
-  },
-};
+import styles from "../styles/miniPallete.js";
 
 class Pallete extends Component {
   constructor(props) {
