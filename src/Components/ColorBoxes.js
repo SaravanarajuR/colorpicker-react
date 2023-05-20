@@ -3,6 +3,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import { Link } from "react-router-dom";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/colorBoxes";
+import chroma from "chroma-js";
 
 class ColorBoxes extends Component {
   constructor() {
@@ -37,13 +38,23 @@ class ColorBoxes extends Component {
               <button className={classes.copyBtn}>
                 {this.state.clicked ? "copied" : "copy"}
               </button>
-              <span className={`name`}>{this.props.name}</span>
+              <span
+                className={`${classes.name} ${
+                  classes[
+                    chroma(this.props.hex).luminance() >= 0.588
+                      ? "black"
+                      : "white"
+                  ]
+                }`}
+              >
+                {this.props.name}
+              </span>
               {this.props.single ? (
                 ""
               ) : (
                 <Link to={`/seemore/${this.props.id}/${this.props.name}`}>
                   <p
-                    className={classes.seemore}
+                    className={`${classes.seemore} `}
                     onClick={(e) => {
                       e.stopPropagation();
                     }}

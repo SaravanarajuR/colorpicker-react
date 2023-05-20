@@ -5,60 +5,6 @@ body {
   overflow: overlay;
   position: relative;
 }
-.App {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-}
-
-/*NAVBAR*/
-
-#navbar {
-  display: flex;
-  height: 10%;
-  padding: 0 19px;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
-  position: relative;
-  margin: 0 10px;
-}
-
-/* Color Boxes */
-
-#box {
-  width: 25%;
-  height: 20%;
-  margin-bottom: -5px;
-  display: inline-block;
-  position: relative;
-}
-.name {
-  position: absolute;
-  bottom: 2px;
-}
-
-.name {
-  position: absolute;
-  bottom: 2px;
-}
-.bottom-btn {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 85%;
-}
-p {
-  display: inline-block;
-}
-.nameEmoji {
-  color: aliceblue;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 /* animaton*/
 
 @keyframes grow {

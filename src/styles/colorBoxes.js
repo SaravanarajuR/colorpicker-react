@@ -8,10 +8,13 @@ const style = {
   seemore: {
     background: "rgb(255, 255, 255, 0.6)",
     border: " none",
+    textDecoration: "none",
     width: "40px",
     height: "20px",
     position: "absolute",
     bottom: "-10px",
+    color: "black",
+    fontWeight: "600",
     right: "0",
     fontSize: "12px",
     display: "flex",
@@ -36,6 +39,26 @@ const style = {
     marginBottom: "-5px",
     display: "inline-block",
     position: "relative",
+  },
+  box: {
+    width: "25%",
+    height: "20%",
+    marginBottom: "-5px",
+    display: "inline-block",
+    position: " relative",
+  },
+  name: {
+    position: "absolute",
+    bottom: " 0",
+    left: "3px",
+    fontSize: "1rem",
+    fontWeight: "500",
+  },
+  black: {
+    color: "black",
+  },
+  white: {
+    color: "rgba(255,255,255,0.9)",
   },
 };
 

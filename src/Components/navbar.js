@@ -7,7 +7,9 @@ class Navbar extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <div id="navbar" className={this.props.mini ? classes.mini : ""}>
+      <div
+        className={`${classes.navbar} ${this.props.mini ? classes.mini : ""}`}
+      >
         <div className={classes.leftNav}>
           <h1>ColorPicker</h1>
           {this.props.mini || this.props.single ? (

@@ -27,6 +27,16 @@ const styles = {
     fontSize: " 1rem",
     color: "#fff",
   },
+  navbar: {
+    display: "flex",
+    height: "10%",
+    padding: "0 19px",
+    justifyContent: "space-between",
+    alignItems: " center",
+    zIndex: "100",
+    position: "relative",
+    margin: "0 10px",
+  },
 };
 
 export default styles;

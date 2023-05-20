@@ -40,7 +40,7 @@ class Pallete extends Component {
     return (
       <div className={classes.top}>
         <div className={classes.inner}>{this.colorPallete()}</div>
-        <div className="nameEmoji">
+        <div className={classes.nameEmoji}>
           <p className={classes.topic}>{this.state.name}</p>
           <p className={classes.topic}>{this.state.emoji}</p>
         </div>

@@ -16,6 +16,12 @@ const styles = {
     height: "70%",
     overflow: "hidden",
   },
+  nameEmoji: {
+    color: " aliceblue",
+    display: "flex",
+    justifyContent: " space-between",
+    alignItems: "center",
+  },
 };
 
 export default styles;
