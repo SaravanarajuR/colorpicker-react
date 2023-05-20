@@ -5,6 +5,7 @@ import Navbar from "../Components/navbar.js";
 import { v4 } from "uuid";
 import { withStyles } from "@material-ui/styles";
 import styles from "../styles/pallete.js";
+import Footer from "../Components/footer.js";
 
 class Pallete extends Component {
   constructor(props) {
@@ -43,6 +44,7 @@ class Pallete extends Component {
           hex={k.hex}
           rgb={k.rgb}
           rgba={k.rgba}
+          level={k}
           className="box"
           copyValue={this.state.copyValue}
         />
@@ -61,9 +63,7 @@ class Pallete extends Component {
           handleDropdown={this.handleDropdown}
         />
         <div className={classes.pallete}>{this.colorPallete()}</div>
-        <footer className={classes.footer}>
-          <p className={classes.footerFont}>{Colors(this.props.id).id}</p>
-        </footer>
+        <Footer className={classes.footer}>{Colors(this.props.id).id}</Footer>
       </div>
     );
   }

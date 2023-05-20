@@ -16,24 +16,11 @@ const styles = {
   },
   pallete: {
     width: " 100%",
-    height: " 85%",
+    height: " 86.3%",
     margin: "-5px 0",
     padding: "0",
     position: "relative",
-    backgroundColor: "black",
-  },
-  footer: {
-    backgroundColor: "white",
-    height: "3%",
-    width: "100%",
-    color: "black",
-    fontWeight: "900",
-    display: "flex",
-    justifyContent: "flex-end",
-    alignItems: "center",
-  },
-  footerFont: {
-    alignSelf: "center",
+    backgroundColor: "grey",
   },
 };
 

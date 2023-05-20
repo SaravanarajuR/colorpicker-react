@@ -11,6 +11,7 @@ class subColors extends Component {
     super();
     this.state = {
       copyValue: "hex",
+      color: window.location.pathname.split("/")[3],
     };
   }
   handleDropdown = () => {
@@ -32,7 +33,7 @@ class subColors extends Component {
       for (let i = 0; i < Object.keys(colorId).length; i++) {
         if (color === colorId[l][i].name) {
           choosenColors.push({
-            name: colorId[l][i].name,
+            name: `${colorId[l][i].name} ${l}`,
             rgb: colorId[l][i].rgb,
             hex: colorId[l][i].hex,
             rgba: colorId[l][i].rgba,
@@ -63,7 +64,7 @@ class subColors extends Component {
         </div>
         <Navbar single={true} handleDropdown={this.handleDropdown} />
         <div className={classes.box}>{this.handleRender()}</div>
-        <Footer color={"black"} />
+        <Footer color={"white"}>{this.state.color.toUpperCase()}</Footer>
       </div>
     );
   }

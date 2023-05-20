@@ -23,6 +23,16 @@ const styles = {
     fontSize: " 1rem",
     color: "#fff",
   },
+  footer: {
+    backgroundColor: "white",
+    height: "3%",
+    width: "100%",
+    color: "black",
+    fontWeight: "900",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 };
 
 export default styles;

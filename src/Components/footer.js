@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/styles";
-import styles from "../styles/home";
+import styles from "../styles/footer";
 
 class Footer extends Component {
   render() {
-    const { classes, color } = this.props;
+    const { classes, children } = this.props;
     return (
-      <div style={{ backgroundColor: color }} className={classes.footer}></div>
+      <div className={classes.footer}>
+        <p className={classes.footerFont}>{children}</p>
+      </div>
     );
   }
 }

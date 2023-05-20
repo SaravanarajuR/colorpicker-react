@@ -1,13 +1,18 @@
 const styles = {
   footer: {
-    backgroundColor: "white",
-    height: "3%",
+    backgroundColor: "black",
+    height: "5%",
     width: "100%",
-    color: "black",
     fontWeight: "900",
     display: "flex",
-    justifyContent: "flex-end",
+    justifyContent: "center",
     alignItems: "center",
+    color: "white",
+  },
+  footerFont: {
+    position: "absolute",
+    right: "3%",
+    bottom: "-4px",
   },
 };
 

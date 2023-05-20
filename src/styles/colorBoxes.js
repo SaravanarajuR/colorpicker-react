@@ -32,6 +32,8 @@ const style = {
     backgroundColor: "rgba(255, 255, 255, 0.3)",
     border: " none",
     visibility: "hidden",
+    fontWeight: "500",
+    fontFamily: " Georgia, 'Times New Roman', Times, serif",
   },
   single: {
     height: " 40%",
@@ -49,10 +51,10 @@ const style = {
   },
   name: {
     position: "absolute",
-    bottom: " 0",
+    bottom: " 3px",
     left: "3px",
-    fontSize: "1rem",
-    fontWeight: "500",
+    fontSize: "0.9rem",
+    fontWeight: "600",
   },
   black: {
     color: "black",

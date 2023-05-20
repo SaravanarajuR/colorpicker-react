@@ -35,13 +35,21 @@ class ColorBoxes extends Component {
             ""
           ) : (
             <div>
-              <button className={classes.copyBtn}>
+              <button
+                className={`${classes.copyBtn} ${
+                  classes[
+                    chroma(this.props.hex).luminance() >= 0.35
+                      ? "black"
+                      : "white"
+                  ]
+                }`}
+              >
                 {this.state.clicked ? "copied" : "copy"}
               </button>
               <span
                 className={`${classes.name} ${
                   classes[
-                    chroma(this.props.hex).luminance() >= 0.588
+                    chroma(this.props.hex).luminance() >= 0.35
                       ? "black"
                       : "white"
                   ]
