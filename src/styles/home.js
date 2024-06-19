@@ -5,17 +5,18 @@ const styles = {
     backgroundColor: "rgb(130, 130, 228)",
   },
   home: {
-    width: "80%",
+    width: "90%",
     height: "100%",
-    display: "grid",
-    gridTemplateColumns: "repeat(3, 27%)",
-    gap: "5%",
+    display: "flex",
+    gap: "7%",
+    alignItems: "center",
+    justifyContent: "center",
+    flexWrap: "wrap",
   },
   homeOuter: {
     overflow: "auto",
     justifyContent: "center",
     width: "100%",
-    display: "flex",
     height: " 87%",
   },
   Link: {
