@@ -7,7 +7,10 @@ const styles = {
     padding: "5px 10px",
     display: "flex",
     width: "50%",
-    gap: "30px",
+    gap: "5%",
+    "@media (max-width: 600px)": {
+      padding: "5px 0",
+    },
   },
   colorChoose: {
     borderRadius: "6px",
@@ -21,6 +24,12 @@ const styles = {
       borderBottom: "2px solid blueviolet",
       animation: " 0.3s grow forwards",
     },
+    position: "absolute",
+    top: "5px",
+    right: "10px",
+  },
+  head: {
+    fontSize: "1.3rem",
   },
   Link: {
     textDecoration: "none",
@@ -36,6 +45,9 @@ const styles = {
     zIndex: "100",
     position: "relative",
     margin: "0 10px",
+    "@media(max-width:600px)": {
+      margin: 0,
+    },
   },
 };
 
