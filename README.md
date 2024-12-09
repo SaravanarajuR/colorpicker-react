@@ -13,5 +13,5 @@
 2. Add users and enable them to save colors on cloud<br>
 3. Code Organisation<br>
 4. Email verification and account management<br>
-5.  done
+5. task done 
 </h4>
