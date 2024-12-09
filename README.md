@@ -6,6 +6,7 @@
 2. chroma<br>
 3. Jss<br>
 4. Adaptive text colors to match background<br>
+5. responsive design<br>
 </h4>
 <h2>Things that will be included</h2><br>
 <h4>
@@ -13,5 +14,5 @@
 2. Add users and enable them to save colors on cloud<br>
 3. Code Organisation<br>
 4. Email verification and account management<br>
-5. task done 
+
 </h4>
